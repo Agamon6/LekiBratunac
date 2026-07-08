@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bratunac u brojkama - nezavisni statistički portal opštine Bratunac.">
+    <title>Bratunac u brojkama</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header class="hero" id="pocetak">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Republika Srpska • Opština Bratunac</div>
+            <h1>BRATUNAC <span class="hero-accent">u brojkama</span></h1>
+            <p class="hero-subtitle">
+                Pregled najvažnijih statističkih pokazatelja: budžet, stanovništvo,
+                obrazovanje, poljoprivreda, rashodi i privredna struktura.
+            </p>
+            <div class="hero-meta" aria-label="Teme portala">
+                <a href="#budzet">Budžet</a>
+                <a href="#stanovnistvo">Stanovništvo</a>
+                <a href="#obrazovanje">Obrazovanje</a>
+                <a href="#privreda">Privreda</a>
+            </div>
+        </div>
+        <a class="hero-scroll" href="#pregled">Pogledaj podatke ↓</a>
+    </header>
+
+
+    <main class="container" id="pregled">
+        <section class="card intro-card">
+            <div>
+                <p class="eyebrow">Kontrolna tabla</p>
+                <h2>Ključne informacije</h2>
+                <p>
+                    Ova stranica je napravljena kao čista lokalna verzija bez EY/Microsoft login fajlova.
+                    Svi grafikoni se prikazuju iz lokalnog JavaScript-a i JSON fajla.
+                </p>
+            </div>
+
+
+            <div class="stats-grid">
+                <article class="stat-box">
+                    <div class="stat-number">17.668</div>
+                    <div class="stat-label">stanovnika</div>
+                </article>
+                <article class="stat-box">
+                    <div class="stat-number">293</div>
+                    <div class="stat-label">km² površine</div>
+                </article>
+                <article class="stat-box">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">grafikona</div>
+                </article>
+                <article class="stat-box">
+                    <div class="stat-number">2026</div>
+                    <div class="stat-label">verzija portala</div>
+                </article>
+            </div>
+        </section>
+
+
+        <section class="toolbar card">
+            <div>
+                <p class="eyebrow">Brza navigacija</p>
+                <h2>Izaberi oblast</h2>
+            </div>
+            <div class="toolbar-links">
+                <a href="#budzet">Budžet</a>
+                <a href="#stanovnistvo">Stanovništvo</a>
+                <a href="#starost">Starosna struktura</a>
+                <a href="#obrazovanje">Obrazovanje</a>
+                <a href="#izbori">Izbori</a>
+                <a href="#poljoprivreda">Poljoprivreda</a>
+                <a href="#rashodi">Rashodi</a>
+                <a href="#privreda">Privreda</a>
+            </div>
+        </section>
+
+
+        <section class="charts-grid">
+            <article class="card chart-card" id="budzet">
+                <div class="section-heading">
+                    <p class="eyebrow">Finansije</p>
+                    <h2>Budžet opštine</h2>
+                    <p>Pregled budžeta po godinama, prema lokalnom JSON fajlu.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="budzetChart"></canvas>
+                </div>
+            </article>
+
+
+            <article class="card chart-card" id="stanovnistvo">
+                <div class="section-heading">
+                    <p class="eyebrow">Demografija</p>
+                    <h2>Stanovništvo</h2>
+                    <p>Kretanje broja stanovnika kroz tri referentne tačke.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="stanovnistvoChart"></canvas>
+                </div>
+            </article>
+
+
+            <article class="card chart-card" id="starost">
+                <div class="section-heading">
+                    <p class="eyebrow">Demografija</p>
+                    <h2>Starosna struktura</h2>
+                    <p>Procijenjena raspodjela stanovništva prema starosnim grupama.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="starostChart"></canvas>
+                </div>
+            </article>
+
+
+            <article class="card chart-card" id="obrazovanje">
+                <div class="section-heading">
+                    <p class="eyebrow">Javne usluge</p>
+                    <h2>Obrazovanje</h2>
+                    <p>Pregled broja učenika po osnovnim školama.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="obrazovanjeChart"></canvas>
+                </div>
+            </article>
+
+
+            <article class="card chart-card" id="izbori">
+                <div class="section-heading">
+                    <p class="eyebrow">Lokalni podaci</p>
+                    <h2>Lokalni izbori 2024</h2>
+                    <p>Procjena glasova po kandidatima, za demo prikaz portala.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="izboriChart"></canvas>
+                </div>
+            </article>
+
+
+            <article class="card chart-card" id="poljoprivreda">
+                <div class="section-heading">
+                    <p class="eyebrow">Ekonomija</p>
+                    <h2>Poljoprivreda</h2>
+                    <p>Trend proizvodnje maline u regiji Birač.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="poljoprivredaChart"></canvas>
+                </div>
+            </article>
+
+
+            <article class="card chart-card" id="rashodi">
+                <div class="section-heading">
+                    <p class="eyebrow">Finansije</p>
+                    <h2>Struktura budžetskih rashoda</h2>
+                    <p>Ilustrativna struktura rashoda po glavnim kategorijama.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="rashodiChart"></canvas>
+                </div>
+            </article>
+
+
+            <article class="card chart-card" id="privreda">
+                <div class="section-heading">
+                    <p class="eyebrow">Ekonomija</p>
+                    <h2>Privredna struktura</h2>
+                    <p>Procijenjena raspodjela aktivnosti po sektorima.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="privredaChart"></canvas>
+                </div>
+            </article>
+        </section>
+    </main>
+
+
+    <footer>
+        <p><strong>Bratunac u brojkama</strong></p>
+        <p class="small">Nezavisni statistički portal • lokalna verzija bez EY fajlova</p>
+        <a href="#pocetak" class="back-to-top">Nazad na vrh ↑</a>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
